@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using ProjNP1.Models;
 using System.Data;
-using System.Windows.Forms;
 
 namespace ProjNP1.DAO
 {
-    class Dao_Proj
+    class Dao_Funcionario
     {
         SqlConnection conexao;
         // teste de atualizaçao de codigo
         //testestsss
 
-        public Dao_Proj()
+        public Dao_Funcionario()
         {
             conexao = new SqlConnection(@"Data Source = SUP-025\SQLEXPRESS;
                                         Trusted_Connection = True;
@@ -40,7 +39,7 @@ namespace ProjNP1.DAO
             }
             catch
             {
-               MessageBox.Show("Algo deu errado, nao foi possivel conectar no banco de dados");
+              
             }
             finally
             {
@@ -97,7 +96,7 @@ namespace ProjNP1.DAO
             }
             catch
             {
-                MessageBox.Show("Algo deu errado, nao foi possivel conectar no banco de dados");
+                
             }
             finally
             {

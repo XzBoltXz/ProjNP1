@@ -53,7 +53,19 @@
     <Compile Include="Controllers\Ctr_Financeiro.cs" />
     <Compile Include="Controllers\Ctr_Funcionario.cs" />
     <Compile Include="Controllers\Ctr_Telefone.cs" />
-    <Compile Include="DAO\Dao_Proj.cs" />
+    <Compile Include="DAO\Dao_Abatimentos.cs" />
+    <Compile Include="DAO\Dao_Bonificacao.cs" />
+    <Compile Include="DAO\Dao_Endereco.cs" />
+    <Compile Include="DAO\Dao_Financeiro.cs" />
+    <Compile Include="DAO\Dao_FP.cs" />
+    <Compile Include="DAO\Dao_Funcionario.cs" />
+    <Compile Include="DAO\Dao_Telefone.cs" />
+    <Compile Include="Views\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,14 +11,14 @@ namespace ProjNP1.Controllers
 {
     class Ctr_Funcionario: Ctr_Financeiro
     {
-        Dao_Proj dao_proj;
+        Dao_Funcionario dao_funcionario;
         public Ctr_Funcionario()
         {
-            dao_proj = new Dao_Proj();
+            dao_funcionario = new Dao_Funcionario();
         }
         public void Adicionar(Funcionario funcionario)
         {
-            dao_proj.Adicionar(funcionario);
+            dao_funcionario.Adicionar(funcionario);
         }
 
         public void Editar(Funcionario funcionario)
@@ -27,15 +27,15 @@ namespace ProjNP1.Controllers
             temp.CPF = funcionario.CPF;
             temp = Consultar(temp);
 
-          
-                dao_proj.Editar(funcionario);
+
+            dao_funcionario.Editar(funcionario);
             
         }
 
         public Funcionario Consultar(Funcionario funcionario)
         {
             Funcionario temp = new Funcionario();
-           temp= dao_proj.Consultar(funcionario);
+           temp= dao_funcionario.Consultar(funcionario);
             return temp;
            
         }
@@ -48,7 +48,7 @@ namespace ProjNP1.Controllers
 
         //    if (temp.cod != 0)
             {
-                dao_proj.Excluir(funcionario);
+                dao_funcionario.Excluir(funcionario);
             }
         }
 
