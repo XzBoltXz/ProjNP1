@@ -12,13 +12,16 @@ namespace ProjNP1.Controllers
     class Ctr_Funcionario: Ctr_Financeiro
     {
         Dao_Funcionario dao_funcionario;
+        
         public Ctr_Funcionario()
         {
             dao_funcionario = new Dao_Funcionario();
+            
         }
         public void Adicionar(Funcionario funcionario)
         {
             dao_funcionario.Adicionar(funcionario);
+            
         }
 
         public void Editar(Funcionario funcionario)

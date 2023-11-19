@@ -21,17 +21,17 @@ namespace ProjNP1.DAO
                                           Initial Catalog = DB_PIM;");
         }
 
-        public void Adicionar(Endereco Endereco)
+        public void Adicionar(Endereco endereco)
         {
-            string strSQL = "insert into Bonicacao(Rua, Bairro, NumCasa, CEP, Complemento  )values(@RUA, @BAIRRO, @NUMCASA, @CEP, @COMPLEMENTO)";
+            string strSQL = "insert into Bonicacao(Rua, Bairro, NumCasa, CEP, Complemento)values(@RUA, @BAIRRO, @NUMCASA, @CEP, @COMPLEMENTO)";
 
             SqlCommand comando = new SqlCommand(strSQL, conexao);
 
-            comando.Parameters.AddWithValue("@RUA", Endereco.Rua);
-            comando.Parameters.AddWithValue("@BAIRRO", Endereco.Bairro);
-            comando.Parameters.AddWithValue("@NUMCASA", Endereco.NumCasa);
-            comando.Parameters.AddWithValue("@CEP", Endereco.CEP);
-            comando.Parameters.AddWithValue("@Complemento", Endereco.Complemento);
+            comando.Parameters.AddWithValue("@RUA", endereco.Rua);
+            comando.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
+            comando.Parameters.AddWithValue("@NUMCASA", endereco.NumCasa);
+            comando.Parameters.AddWithValue("@CEP", endereco.CEP);
+            comando.Parameters.AddWithValue("@Complemento", endereco.Complemento);
 
             try
             {

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Crt_FolhaDePagamento.cs" />
     <Compile Include="Controllers\Ctr_Abatimentos.cs" />
+    <Compile Include="Controllers\Ctr_Avisos.cs" />
     <Compile Include="Controllers\Ctr_Bonificacao.cs" />
     <Compile Include="Controllers\Ctr_Endereco.cs" />
     <Compile Include="Controllers\Ctr_Financeiro.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="DAO\Dao_FP.cs" />
     <Compile Include="DAO\Dao_Funcionario.cs" />
     <Compile Include="DAO\Dao_Telefone.cs" />
+    <Compile Include="Models\Avisos.cs" />
     <Compile Include="Views\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
