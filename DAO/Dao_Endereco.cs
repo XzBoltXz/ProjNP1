@@ -6,41 +6,45 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using ProjNP1.Models;
 using System.Data;
-
+using System.Windows.Forms;
 namespace ProjNP1.DAO
 {
     class Dao_Endereco
     {
         SqlConnection conexao;
-
+        
 
         public Dao_Endereco()
         {
             conexao = new SqlConnection(@"Data Source = SUP-025\SQLEXPRESS;
                                         Trusted_Connection = True;
                                           Initial Catalog = DB_PIM;");
+            
         }
 
         public void Adicionar(Endereco endereco)
         {
-            string strSQL = "insert into Bonicacao(Rua, Bairro, NumCasa, CEP, Complemento)values(@RUA, @BAIRRO, @NUMCASA, @CEP, @COMPLEMENTO)";
+            
+            string strSQL = "insert into Funcionarios(RUA, BAIRRO, NUMCASA, CEP, COMPLEMENTO)values(@RUA, @BAIRRO, @NUMCASA, @CEP,@COMPLEMENTO)";
 
             SqlCommand comando = new SqlCommand(strSQL, conexao);
 
+            
             comando.Parameters.AddWithValue("@RUA", endereco.Rua);
-            comando.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);
-            comando.Parameters.AddWithValue("@NUMCASA", endereco.NumCasa);
+            comando.Parameters.AddWithValue("@BAIRRO", endereco.Bairro);            
             comando.Parameters.AddWithValue("@CEP", endereco.CEP);
             comando.Parameters.AddWithValue("@Complemento", endereco.Complemento);
+            comando.Parameters.AddWithValue("@NUMCASA", endereco.NumCasa);
+
 
             try
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
             }
-            catch
+            catch (Exception e)
             {
-                
+                MessageBox.Show(e.ToString());
             }
             finally
             {
@@ -79,7 +83,7 @@ namespace ProjNP1.DAO
                 conexao.Close();
             }
         }
-        public void Editar(Endereco Endereco)
+        /*public void Editar(Endereco Endereco)
         {
             string strSQL = "Update Endereco set Rua = @RUA, Bairro = @BAIRRO, Numcasa = @NUMCASA, CEP = @CEP where Complemento = @Complemento";
             //
@@ -105,7 +109,7 @@ namespace ProjNP1.DAO
             {
                 conexao.Close();
             }
-        }
+        }*/
         public void Excluir(Endereco Endereco)
         {
             string strSQL = "delete from Endereco where CEP = @CEP";

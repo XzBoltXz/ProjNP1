@@ -11,34 +11,40 @@ namespace ProjNP1.DAO
     class Dao_Financeiro
     {
         SqlConnection conexao;
-
+        
 
         public Dao_Financeiro()
         {
             conexao = new SqlConnection(@"Data Source = SUP-025\SQLEXPRESS;
                                         Trusted_Connection = True;
                                           Initial Catalog = DB_PIM;");
+
+           
         }
 
-        public void Adicionar(Financeiro Financeiro)
-        {
-            string strSQL = "insert into Financeiro(Salario, Cargo, DataAdmissao, Departamento)values(@SALARIO, @CARGO, @DATAADMISSAO, @DEPARTAMENTO)";
-
+        
+        public void Adicionar(Financeiro financeiro)
+        {           
+            string strSQL = "insert into Funcionarios(SALARIO, CARGO, DEPARTAMENTO, DTADMISSAO)values(@SALARIO, @CARGO, @DEPARTAMENTO, @DATAADMISSAO)";
+           
             SqlCommand comando = new SqlCommand(strSQL, conexao);
 
-            comando.Parameters.AddWithValue("@SALARIO", Financeiro.Salario);
-            comando.Parameters.AddWithValue("@CARGO", Financeiro.Cargo);
-            comando.Parameters.AddWithValue("@DATAADMISSAO", Financeiro.DataAdmissao);
-            comando.Parameters.AddWithValue("@DEPARTAMENTO", Financeiro.Departamento);
+            
+            comando.Parameters.AddWithValue("@SALARIO", financeiro.Salario);
+            comando.Parameters.AddWithValue("@CARGO", financeiro.Cargo);
+            comando.Parameters.AddWithValue("@DEPARTAMENTO", financeiro.Departamento);
+            comando.Parameters.AddWithValue("@DATAADMISSAO", financeiro.DataAdmissao);            
 
             try
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-            }
-            catch
-            {
                 
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
             }
             finally
             {
@@ -46,7 +52,7 @@ namespace ProjNP1.DAO
             }
         }
 
-        public Financeiro Consultar(Financeiro Financeiro)
+        /*public Financeiro Consultar(Financeiro Financeiro)
         {
             string strSQL = "Select * from Financeiro where Codigo = " + Financeiro.Cargo;
 
@@ -75,7 +81,7 @@ namespace ProjNP1.DAO
             {
                 conexao.Close();
             }
-        }
+        }*/
         public void Editar(Financeiro Financeiro)
         {
             string strSQL = "Update Financeiro set Departamento = @DEPARTAMENTO, Salario = @SALARIO, DataAdmissao = @DATAADMISSAO,  where Cargo = @CARGO";

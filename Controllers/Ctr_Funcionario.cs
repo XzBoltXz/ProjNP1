@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using ProjNP1.DAO;
 using ProjNP1.Models;
 
@@ -11,7 +12,7 @@ namespace ProjNP1.Controllers
 {
     class Ctr_Funcionario: Ctr_Financeiro
     {
-        Dao_Funcionario dao_funcionario;
+        readonly Dao_Funcionario dao_funcionario;
         
         public Ctr_Funcionario()
         {
@@ -20,8 +21,11 @@ namespace ProjNP1.Controllers
         }
         public void Adicionar(Funcionario funcionario)
         {
-            dao_funcionario.Adicionar(funcionario);
             
+            dao_funcionario.Adicionar(funcionario);
+
+
+
         }
 
         public void Editar(Funcionario funcionario)
@@ -29,30 +33,28 @@ namespace ProjNP1.Controllers
             Funcionario temp = new Funcionario();
             temp.CPF = funcionario.CPF;
             temp = Consultar(temp);
-
-
-            dao_funcionario.Editar(funcionario);
+            
+           dao_funcionario.Editar(funcionario);
             
         }
 
         public Funcionario Consultar(Funcionario funcionario)
         {
             Funcionario temp = new Funcionario();
-           temp= dao_funcionario.Consultar(funcionario);
-            return temp;
+          temp= dao_funcionario.Consultar(funcionario);
+            
+           return temp;
            
         }
 
         public void Excluir(Funcionario funcionario)
         {
             Funcionario temp = new Funcionario();
-            temp.cod = funcionario.cod;
-            temp = Consultar(funcionario);
-
-        //    if (temp.cod != 0)
-            {
-                dao_funcionario.Excluir(funcionario);
-            }
+           temp.CPF = funcionario.CPF;
+           temp = Consultar(funcionario);
+       
+           dao_funcionario.Excluir(funcionario);
+       
         }
 
         public void Ativar()

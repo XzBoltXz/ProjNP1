@@ -11,6 +11,12 @@ namespace ProjNP1.Controllers
 {
     class Ctr_Avisos
     {
-        
+        public void Errado(Avisos avisos)
+        {
+            if(avisos.cadastrado != true)
+            {
+                
+            }
+        }
     }
 }

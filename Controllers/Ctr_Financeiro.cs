@@ -11,7 +11,7 @@ namespace ProjNP1.Controllers
     
     class Ctr_Financeiro
     {
-        Dao_Financeiro dao_financeiro;
+        readonly Dao_Financeiro dao_financeiro;
         public Ctr_Financeiro()
         {
             dao_financeiro = new Dao_Financeiro();

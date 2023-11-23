@@ -16,6 +16,7 @@ namespace ProjNP1
     public partial class Form1 : Form
     {
         Thread cadastro;
+        Thread folhaPgto;
         public Form1()
         {
             
@@ -25,6 +26,15 @@ namespace ProjNP1
         private void AbrirJanela(object obj)
         {
             Application.Run(new Cadastro());
+            
+
+        }
+
+        private void AbrirJanela2(object obj)
+        {
+            
+            Application.Run(new FolhaDePagamentoo());
+
         }
         private void btnCadastro_Click(object sender, EventArgs e)
         {
@@ -37,6 +47,14 @@ namespace ProjNP1
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFolhaPgto_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            folhaPgto = new Thread(AbrirJanela2);
+            folhaPgto.SetApartmentState(ApartmentState.MTA);
+            folhaPgto.Start();
         }
     }
 }

@@ -8,7 +8,8 @@ namespace ProjNP1.Models
 {
     class Telefone
     {
-        public int DDD { get; set; }
+        public int codTel { get; set; }
+        public string DDD { get; set; }
         public int Numero { get; set; }
 
         public Telefone()

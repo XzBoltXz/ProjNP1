@@ -77,7 +77,7 @@ namespace ProjNP1.DAO
                 conexao.Close();
             }
         }
-        public void Editar(Bonificacao Bonificacao)
+       /*public void Editar(Bonificacao Bonificacao)
         {
             string strSQL = "Update Bonuficacao set HoraExtra = @HORAEXTRA, Comissao = @COMISSAO, AuxHomeOffice = @AUXHOMEOFFICE, where AuxEstudo =@AUXESTUDO";
             //
@@ -102,7 +102,7 @@ namespace ProjNP1.DAO
             {
                 conexao.Close();
             }
-        }
+        }*/
         public void Excluir(Bonificacao Bonificacao)
         {
             string strSQL = "delete from Bonificacao where Comissao = @COMISSAO";

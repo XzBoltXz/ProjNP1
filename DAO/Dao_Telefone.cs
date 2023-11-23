@@ -12,33 +12,35 @@ namespace ProjNP1.DAO
     class Dao_Telefone
     {
         SqlConnection conexao;
-
+        
 
         public Dao_Telefone()
         {
             conexao = new SqlConnection(@"Data Source = SUP-025\SQLEXPRESS;
                                         Trusted_Connection = True;
                                           Initial Catalog = DB_PIM;");
+            
         }
 
-        public void Adicionar(Telefone Telefone)
+        public void Adicionar(Telefone telefone)
         {
-            string strSQL = "insert into Abatimentos(DDD,Numero )values(@DDD, @Numero)";
+           
+            string strSQL = "insert into Funcionarios(DDD,Numero)values( @DDD, @Numero)";
 
             SqlCommand comando = new SqlCommand(strSQL, conexao);
 
-            comando.Parameters.AddWithValue("@DDD", Telefone.DDD);
-            comando.Parameters.AddWithValue("@NUMERO", Telefone.Numero);
-
+            
+            comando.Parameters.AddWithValue("@DDD", telefone.DDD);
+            comando.Parameters.AddWithValue("@NUMERO", telefone.Numero);
 
             try
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
             }
-            catch
+            catch (Exception e)
             {
-                
+                e.ToString();
             }
             finally
             {
@@ -59,7 +61,7 @@ namespace ProjNP1.DAO
 
                 while (rd.Read())
                 {
-                    Telefone.DDD = Convert.ToInt32(rd["DDD"]);
+                    Telefone.DDD = Convert.ToString(rd["DDD"]);
                     Telefone.Numero = Convert.ToInt32(rd["NUMERO"]);
 
 
