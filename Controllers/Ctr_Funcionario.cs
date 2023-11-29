@@ -10,24 +10,18 @@ using ProjNP1.Models;
 
 namespace ProjNP1.Controllers
 {
-    class Ctr_Funcionario: Ctr_Financeiro
+    class Ctr_Funcionario
     {
         readonly Dao_Funcionario dao_funcionario;
         
         public Ctr_Funcionario()
         {
-            dao_funcionario = new Dao_Funcionario();
-            
+            dao_funcionario = new Dao_Funcionario();            
         }
         public void Adicionar(Funcionario funcionario)
-        {
-            
+        {            
             dao_funcionario.Adicionar(funcionario);
-
-
-
         }
-
         public void Editar(Funcionario funcionario)
         {
             Funcionario temp = new Funcionario();
@@ -37,16 +31,13 @@ namespace ProjNP1.Controllers
            dao_funcionario.Editar(funcionario);
             
         }
-
         public Funcionario Consultar(Funcionario funcionario)
         {
             Funcionario temp = new Funcionario();
-          temp= dao_funcionario.Consultar(funcionario);
+            temp= dao_funcionario.Consultar(funcionario);
             
-           return temp;
-           
+           return temp;           
         }
-
         public void Excluir(Funcionario funcionario)
         {
             Funcionario temp = new Funcionario();
@@ -55,16 +46,6 @@ namespace ProjNP1.Controllers
        
            dao_funcionario.Excluir(funcionario);
        
-        }
-
-        public void Ativar()
-        {
-
-        }
-
-        public void Desativar()
-        {
-
-        }
+        }       
     }
 }

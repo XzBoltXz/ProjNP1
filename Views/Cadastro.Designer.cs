@@ -41,8 +41,6 @@ namespace ProjNP1.Views
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Cadastrar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -50,7 +48,6 @@ namespace ProjNP1.Views
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,33 +57,27 @@ namespace ProjNP1.Views
             this.label13 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox16 = new System.Windows.Forms.TextBox();
-            this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dB_PIMDataSet = new ProjNP1.DB_PIMDataSet();
-            this.funcionariosTableAdapter = new ProjNP1.DB_PIMDataSetTableAdapters.FuncionariosTableAdapter();
-            this.financeiroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.financeiroTableAdapter = new ProjNP1.DB_PIMDataSetTableAdapters.FinanceiroTableAdapter();
-            this.enderecoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enderecoTableAdapter = new ProjNP1.DB_PIMDataSetTableAdapters.EnderecoTableAdapter();
             this.telefoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.telefoneTableAdapter = new ProjNP1.DB_PIMDataSetTableAdapters.TelefoneTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_PIMDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financeiroBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enderecoBindingSource)).BeginInit();
+            this.BtnVoltar = new System.Windows.Forms.Button();
+            this.Btn_Limpar = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.telefoneBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(731, 89);
+            this.label5.Location = new System.Drawing.Point(615, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 25);
             this.label5.TabIndex = 28;
@@ -96,7 +87,7 @@ namespace ProjNP1.Views
             // 
             this.textBox5.AccessibleName = "";
             this.textBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox5.Location = new System.Drawing.Point(789, 85);
+            this.textBox5.Location = new System.Drawing.Point(673, 72);
             this.textBox5.MaxLength = 11;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(208, 29);
@@ -105,23 +96,23 @@ namespace ProjNP1.Views
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(445, 78);
+            this.button2.Location = new System.Drawing.Point(372, 72);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 36);
             this.button2.TabIndex = 26;
             this.button2.Text = "Excluir";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(327, 78);
+            this.button1.Location = new System.Drawing.Point(254, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 36);
             this.button1.TabIndex = 25;
             this.button1.Text = "Alterar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Editar_Click);
             // 
             // textBox4
             // 
@@ -133,7 +124,7 @@ namespace ProjNP1.Views
             // 
             // btn_Consultar
             // 
-            this.btn_Consultar.Location = new System.Drawing.Point(1003, 78);
+            this.btn_Consultar.Location = new System.Drawing.Point(887, 70);
             this.btn_Consultar.Name = "btn_Consultar";
             this.btn_Consultar.Size = new System.Drawing.Size(108, 36);
             this.btn_Consultar.TabIndex = 23;
@@ -179,32 +170,13 @@ namespace ProjNP1.Views
             // 
             // btn_Cadastrar
             // 
-            this.btn_Cadastrar.Location = new System.Drawing.Point(209, 78);
+            this.btn_Cadastrar.Location = new System.Drawing.Point(136, 72);
             this.btn_Cadastrar.Name = "btn_Cadastrar";
             this.btn_Cadastrar.Size = new System.Drawing.Size(112, 36);
             this.btn_Cadastrar.TabIndex = 18;
             this.btn_Cadastrar.Text = "Cadastrar";
             this.btn_Cadastrar.UseVisualStyleBackColor = true;
             this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click_1);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(8, 324);
-            this.textBox3.MaxLength = 9;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(212, 29);
-            this.textBox3.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.AccessibleName = "";
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox2.Location = new System.Drawing.Point(8, 257);
-            this.textBox2.MaxLength = 11;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 29);
-            this.textBox2.TabIndex = 16;
-            this.textBox2.Tag = "";
             // 
             // textBox1
             // 
@@ -264,14 +236,6 @@ namespace ProjNP1.Views
             this.label9.TabIndex = 35;
             this.label9.Text = "CEP";
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(515, 324);
-            this.textBox8.MaxLength = 8;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(212, 29);
-            this.textBox8.TabIndex = 34;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -280,7 +244,6 @@ namespace ProjNP1.Views
             this.label10.Size = new System.Drawing.Size(34, 25);
             this.label10.TabIndex = 37;
             this.label10.Text = "N°";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBox9
             // 
@@ -330,7 +293,6 @@ namespace ProjNP1.Views
             this.label13.Size = new System.Drawing.Size(135, 25);
             this.label13.TabIndex = 39;
             this.label13.Text = "Departamento";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // textBox12
             // 
@@ -349,13 +311,6 @@ namespace ProjNP1.Views
             this.label14.TabIndex = 46;
             this.label14.Text = "Data Admissao";
             // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(253, 388);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(212, 29);
-            this.textBox13.TabIndex = 45;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -364,15 +319,6 @@ namespace ProjNP1.Views
             this.label15.Size = new System.Drawing.Size(81, 25);
             this.label15.TabIndex = 50;
             this.label15.Text = "Numero";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(61, 390);
-            this.textBox14.MaxLength = 9;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(159, 29);
-            this.textBox14.TabIndex = 49;
             // 
             // label16
             // 
@@ -407,60 +353,93 @@ namespace ProjNP1.Views
             this.textBox16.Size = new System.Drawing.Size(212, 29);
             this.textBox16.TabIndex = 51;
             // 
-            // funcionariosBindingSource
-            // 
-            this.funcionariosBindingSource.DataMember = "Funcionarios";
-            this.funcionariosBindingSource.DataSource = this.dB_PIMDataSet;
-            // 
-            // dB_PIMDataSet
-            // 
-            this.dB_PIMDataSet.DataSetName = "DB_PIMDataSet";
-            this.dB_PIMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // funcionariosTableAdapter
-            // 
-            this.funcionariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // financeiroBindingSource
-            // 
-            this.financeiroBindingSource.DataMember = "Financeiro";
-            this.financeiroBindingSource.DataSource = this.dB_PIMDataSet;
-            // 
-            // financeiroTableAdapter
-            // 
-            this.financeiroTableAdapter.ClearBeforeFill = true;
-            // 
-            // enderecoBindingSource
-            // 
-            this.enderecoBindingSource.DataMember = "Endereco";
-            this.enderecoBindingSource.DataSource = this.dB_PIMDataSet;
-            // 
-            // enderecoTableAdapter
-            // 
-            this.enderecoTableAdapter.ClearBeforeFill = true;
-            // 
-            // telefoneBindingSource
-            // 
-            this.telefoneBindingSource.DataMember = "Telefone";
-            this.telefoneBindingSource.DataSource = this.dB_PIMDataSet;
-            // 
             // telefoneTableAdapter
             // 
             this.telefoneTableAdapter.ClearBeforeFill = true;
+            // 
+            // BtnVoltar
+            // 
+            this.BtnVoltar.Location = new System.Drawing.Point(875, 377);
+            this.BtnVoltar.Name = "BtnVoltar";
+            this.BtnVoltar.Size = new System.Drawing.Size(120, 40);
+            this.BtnVoltar.TabIndex = 53;
+            this.BtnVoltar.Text = "Voltar";
+            this.BtnVoltar.UseVisualStyleBackColor = true;
+            this.BtnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
+            // 
+            // Btn_Limpar
+            // 
+            this.Btn_Limpar.Location = new System.Drawing.Point(490, 72);
+            this.Btn_Limpar.Name = "Btn_Limpar";
+            this.Btn_Limpar.Size = new System.Drawing.Size(112, 36);
+            this.Btn_Limpar.TabIndex = 54;
+            this.Btn_Limpar.Text = "Limpar";
+            this.Btn_Limpar.UseVisualStyleBackColor = true;
+            this.Btn_Limpar.Click += new System.EventHandler(this.Btn_Limpar_Click);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(8, 259);
+            this.maskedTextBox1.Mask = "000.000.000-00";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(208, 29);
+            this.maskedTextBox1.TabIndex = 55;
+            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(8, 325);
+            this.maskedTextBox2.Mask = "00.000.000-0";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(208, 29);
+            this.maskedTextBox2.TabIndex = 56;
+            this.maskedTextBox2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(515, 324);
+            this.maskedTextBox3.Mask = "00000-000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(208, 29);
+            this.maskedTextBox3.TabIndex = 57;
+            this.maskedTextBox3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // maskedTextBox4
+            // 
+            this.maskedTextBox4.Location = new System.Drawing.Point(61, 390);
+            this.maskedTextBox4.Mask = "00000-0000";
+            this.maskedTextBox4.Name = "maskedTextBox4";
+            this.maskedTextBox4.Size = new System.Drawing.Size(155, 29);
+            this.maskedTextBox4.TabIndex = 58;
+            this.maskedTextBox4.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // maskedTextBox5
+            // 
+            this.maskedTextBox5.Location = new System.Drawing.Point(253, 387);
+            this.maskedTextBox5.Mask = "00/00/0000";
+            this.maskedTextBox5.Name = "maskedTextBox5";
+            this.maskedTextBox5.Size = new System.Drawing.Size(208, 29);
+            this.maskedTextBox5.TabIndex = 59;
+            this.maskedTextBox5.ValidatingType = typeof(System.DateTime);
             // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 525);
+            this.ClientSize = new System.Drawing.Size(1026, 440);
+            this.Controls.Add(this.maskedTextBox5);
+            this.Controls.Add(this.maskedTextBox4);
+            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.Btn_Limpar);
+            this.Controls.Add(this.BtnVoltar);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox16);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox14);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label12);
@@ -470,7 +449,6 @@ namespace ProjNP1.Views
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label7);
@@ -487,16 +465,9 @@ namespace ProjNP1.Views
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Cadastrar);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Cadastro";
             this.Text = "Cadastro de Funcionarios";
-            this.Load += new System.EventHandler(this.Cadastro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_PIMDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.financeiroBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enderecoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.telefoneBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -515,8 +486,6 @@ namespace ProjNP1.Views
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Cadastrar;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox6;
@@ -524,7 +493,6 @@ namespace ProjNP1.Views
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
@@ -534,22 +502,20 @@ namespace ProjNP1.Views
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox15;
         public System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox16;
-        private DB_PIMDataSet dB_PIMDataSet;
-        private System.Windows.Forms.BindingSource funcionariosBindingSource;
-        private DB_PIMDataSetTableAdapters.FuncionariosTableAdapter funcionariosTableAdapter;
-        private System.Windows.Forms.BindingSource financeiroBindingSource;
-        private DB_PIMDataSetTableAdapters.FinanceiroTableAdapter financeiroTableAdapter;
-        private System.Windows.Forms.BindingSource enderecoBindingSource;
-        private DB_PIMDataSetTableAdapters.EnderecoTableAdapter enderecoTableAdapter;
         private System.Windows.Forms.BindingSource telefoneBindingSource;
         private DB_PIMDataSetTableAdapters.TelefoneTableAdapter telefoneTableAdapter;
+        private System.Windows.Forms.Button BtnVoltar;
+        private System.Windows.Forms.Button Btn_Limpar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
     }
 }

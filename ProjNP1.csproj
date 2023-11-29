@@ -53,26 +53,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Crt_FolhaDePagamento.cs" />
-    <Compile Include="Controllers\Ctr_Abatimentos.cs" />
-    <Compile Include="Controllers\Ctr_Avisos.cs" />
-    <Compile Include="Controllers\Ctr_Bonificacao.cs" />
-    <Compile Include="Controllers\Ctr_Endereco.cs" />
-    <Compile Include="Controllers\Ctr_Financeiro.cs" />
     <Compile Include="Controllers\Ctr_Funcionario.cs" />
-    <Compile Include="Controllers\Ctr_Telefone.cs" />
-    <Compile Include="DAO\Dao_Abatimentos.cs" />
-    <Compile Include="DAO\Dao_Bonificacao.cs" />
-    <Compile Include="DAO\Dao_Endereco.cs" />
-    <Compile Include="DAO\Dao_Financeiro.cs" />
     <Compile Include="DAO\Dao_FP.cs" />
     <Compile Include="DAO\Dao_Funcionario.cs" />
-    <Compile Include="DAO\Dao_Telefone.cs" />
     <Compile Include="DB_PIMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_PIMDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Models\Avisos.cs" />
     <Compile Include="Views\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,8 +79,6 @@
     <Compile Include="Views\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bonificacao.cs" />
-    <Compile Include="Models\Abatimentos.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Financeiro.cs" />
     <Compile Include="Models\FolhaDePagamento.cs" />

@@ -45,9 +45,9 @@ namespace ProjNP1.DAO
             }
         }
 
-        public FolhaDePagamento Consultar(FolhaDePagamento FolhaDePagamento)
+        public Funcionario Consultar(Funcionario funcionario)
         {
-            string strSQL = "Select * from FolhaDePagamento where Codigo = " + FolhaDePagamento.Codigo;
+            string strSQL = "Select * from Funcionarios where CPF ="+ funcionario.CPF;
 
             SqlCommand comando = new SqlCommand(strSQL, conexao);
 
@@ -58,14 +58,17 @@ namespace ProjNP1.DAO
 
                 while (rd.Read())
                 {
-                    FolhaDePagamento.Codigo = Convert.ToInt32(rd["COD_FP"]);
-                    FolhaDePagamento.SalarioBruto = Convert.ToDouble(rd["SALARIOBRUTO"]);
-                    FolhaDePagamento.SalarioLiquido = Convert.ToDouble(rd["SALARIOLIQUIDO"]);
-
+                    funcionario.CodFunc = Convert.ToInt32(rd["COD_FUNC"]);
+                    funcionario.Nome = Convert.ToString(rd["NOME"]);
+                    funcionario.CPF = Convert.ToDouble(rd["CPF"]);
+                    funcionario.RG = Convert.ToDouble(rd["RG"]);
+                    funcionario.Departamento = Convert.ToString(rd["DEPARTAMENTO"]);
+                    funcionario.Cargo = Convert.ToString(rd["CARGO"]);
+                    funcionario.Salario = Convert.ToDouble(rd["SALARIO"]);
                 }
-                return FolhaDePagamento;
+                return funcionario;
             }
-            catch
+            catch 
             {
                 return null;
             }

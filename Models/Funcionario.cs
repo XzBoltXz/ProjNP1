@@ -8,8 +8,8 @@ namespace ProjNP1.Models
 {
     class Funcionario: Financeiro
     {
-        public int codFunc { get; set; }
-        public string nome { get; set; }
+        public int CodFunc { get; set; }
+        public string Nome { get; set; }
         public double CPF { get; set; }
         public double RG { get; set; }
         public Endereco End { get; set; }

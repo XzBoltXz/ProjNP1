@@ -12,16 +12,11 @@ namespace ProjNP1.DAO
 {
     class Dao_Funcionario
     {
-        SqlConnection conexao;
-        
+        readonly SqlConnection conexao;        
         public Dao_Funcionario()
         {
-            conexao = new SqlConnection(@"Data Source = SUP-025\SQLEXPRESS;
-                                        Trusted_Connection = True;
-                                          Initial Catalog = DB_PIM;");
-            
+            conexao = new SqlConnection(@"Data Source = SUP-025\SQLEXPRESS;Trusted_Connection = True;Initial Catalog = DB_PIM;");
         }       
-
         public void Adicionar(Funcionario funcionario)
         {
             string strSQL = "insert into Funcionarios(NOME, CPF, RG, DDD, Numero,SALARIO, CARGO, DEPARTAMENTO, DTADMISSAO, RUA, BAIRRO, NUMCASA, CEP, COMPLEMENTO )" +
@@ -29,8 +24,7 @@ namespace ProjNP1.DAO
             
             SqlCommand comando = new SqlCommand(strSQL,conexao);
 
-            
-            comando.Parameters.AddWithValue("@NOME" , Convert.ToString(funcionario.nome));
+            comando.Parameters.AddWithValue("@NOME", Convert.ToString(funcionario.Nome));
             comando.Parameters.AddWithValue("@CPF", Convert.ToDouble(funcionario.CPF));
             comando.Parameters.AddWithValue("@RG", Convert.ToDouble(funcionario.RG));
             comando.Parameters.AddWithValue("@DDD", Convert.ToDouble(funcionario.End.DDD));
@@ -45,22 +39,20 @@ namespace ProjNP1.DAO
             comando.Parameters.AddWithValue("@CEP", funcionario.End.CEP);
             comando.Parameters.AddWithValue("@COMPLEMENTO", funcionario.End.Complemento);
 
-
             try
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
             }
-            catch (Exception e)
+            catch
             {
-                MessageBox.Show(e.ToString());
+               
             }
             finally
             {
                 conexao.Close();
             }
         }
-
         public Funcionario Consultar(Funcionario funcionario)
         {
             string strSQL = "Select * from Funcionarios where CPF ="+ funcionario.CPF;
@@ -74,8 +66,8 @@ namespace ProjNP1.DAO
 
                 while(rd.Read())
                 {
-                    funcionario.codFunc = Convert.ToInt32(rd["COD_FUNC"]);
-                    funcionario.nome = Convert.ToString(rd["NOME"]);
+                    funcionario.CodFunc = Convert.ToInt32(rd["COD_FUNC"]);
+                    funcionario.Nome = Convert.ToString(rd["NOME"]);
                     funcionario.CPF = Convert.ToDouble(rd["CPF"]);
                     funcionario.RG = Convert.ToDouble(rd["RG"]);
                     funcionario.End.DDD = Convert.ToString(rd["DDD"]);
@@ -105,13 +97,11 @@ namespace ProjNP1.DAO
         {
             string strSQL = "Update Funcionarios set NOME = @NOME, RG = @RG, DDD= @DDD,NUMERO = @Numero,SALARIO = @SALARIO,CARGO = @CARGO," +
                 " DEPARTAMENTO= @DEPARTAMENTO,RUA = @RUA, BAIRRO= @BAIRRO, NUMCASA = @NUMCASA, CEP = @CEP,COMPLEMENTO = @COMPLEMENTO where CPF = " + funcionario.CPF;
-                //
-                //"Update Funcionarios set NOME = @NOME, RG = @RG where CPF = @CPF";
-
+               
             SqlCommand comando = new SqlCommand(strSQL, conexao);
 
             
-            comando.Parameters.AddWithValue("@NOME", funcionario.nome);            
+            comando.Parameters.AddWithValue("@NOME", funcionario.Nome);            
             comando.Parameters.AddWithValue("@RG", funcionario.RG);
             comando.Parameters.AddWithValue("@DDD", funcionario.End.DDD);
             comando.Parameters.AddWithValue("@NUMERO", Convert.ToDouble(funcionario.End.Numero));
